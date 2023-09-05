@@ -1,0 +1,15 @@
+{
+  "Windows": [
+    {
+      "app_name": "Stellula",
+      "asset_id": "Stellula",
+      "build_version": "1.7.1.0o Win",
+      "catalog_item_id": "f71268e4d1c144aea3cb30b7ab5a7b0e",
+      "label_name": "Live-Windows",
+      "metadata": {
+        "installationPoolId": "7365ec397c1e4bd7b836be6157d94723"
+      },
+      "namespace": "493e9ad801e8487497fe7840cb8404bb"
+    }
+  ]
+}

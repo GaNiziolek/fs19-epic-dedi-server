@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+
+<html><head>
+    <title>Farming Simulator Dedicated Server | Login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	   <script type="text/javascript">
+			var areActiveModsSelected = false;
+			var areInactiveModsSelected = false;
+			function SetActiveSelection()
+			{
+				var checkboxes = document.ActiveMods.getElementsByClassName("ModSelection");
+				areActiveModsSelected = !areActiveModsSelected;
+			    SetSelection(checkboxes, areActiveModsSelected);
+			}
+			function SetInactiveSelection()
+			{
+				var checkboxes = document.InactiveMods.getElementsByClassName("ModSelection");
+				areInactiveModsSelected = !areInactiveModsSelected;
+			    SetSelection(checkboxes, areInactiveModsSelected);
+			}
+			function SetSelection(checkboxes, isSelected)
+			{
+			    for(var i=0, n=checkboxes.length;i<n;i++)
+				{
+			        checkboxes[i].checked = isSelected;
+			    }
+			}
+			function checkSavegame()
+			{
+			    var e = document.getElementById("savegame");
+             if (e != null) {
+			        var savegame = e.options[e.selectedIndex].text;
+			        var isEmpty = isEmptySavegame(savegame);
+			        document.getElementById("mapSelector").disabled = !isEmpty;
+			        document.getElementById("difficultySelector").disabled = !isEmpty;
+			    }
+			}
+			function isEmptySavegame(value)
+			{
+			    var ret = value.match(/SAVEGAME \d\d* - Empty/g) || value.match(/SPIELSTAND \d\d* - Leer/g) || value.match(/SAUVEGARDE \d\d* - Vide/g);
+			return ret != null;
+			}
+		    window.onload = function()
+			{
+			    checkSavegame();
+			}
+	   </script>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/monitor.css" />
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css" async="true"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <script type="text/javascript" src="js/all.js"></script>
+</head>
+<body>
+    <div class="white-bg clearfix">
+    <header class="main-header" role="banner" data-module="sticky">
+    <div class="header-bar clearfix">    <div class = "row column">    <div class = "top-bar-right">    <ul class = "menu float-left"><li><a target="_newTwitter" href="https://twitter.com/farmingsim"><span class="icon fab fa-twitter"></span></a></li><li><a target="_newFacebook" href="https://www.facebook.com/giants.farming.simulator"><span class="icon fab fa-facebook"></span></a></li><li><a target="_newYoutube" href="https://www.youtube.com/user/giantssoftware"><span class="icon fab fa-youtube"></span></a></li><li><a target="_newInstagram" href="https://www.instagram.com/giantsfarmingsimulator"><span class="icon fab fa-instagram"></span></a></li><li><a target="_newInstagram" href="https://www.twitch.tv/giantssoftware"><span class="icon fab fa-twitch"></span></a></li><li><a target="_newInstagram" href="https://discord.gg/giantssoftware"><span class="icon fab fa-discord"></span></a></li>	   </ul>
+<ul class="dropdown menu float-right"><li class="is-dropdown-submenu-parent is-down-arrow menu-flags"><a href="#"><img src="img/icons/flag-en.png" alt="lang"></a><ul class="menu submenu is-dropdown-submenu first-sub vertical"><li><a href="?lang=en"><img style="border:1px solid #000;" src="img/icons/flag-en.png" alt="English"><span class="country">English</span> <span>(en)</span></a></li><li><a href="?lang=de"><img style="border:1px solid #000;" src="img/icons/flag-de.png" alt="Deutsch"><span class="country">Deutsch</span> <span>(de)</span></a></li><li><a href="?lang=fr"><img style="border:1px solid #000;" src="img/icons/flag-fr.png" alt="Francais"><span class="country">Francais</span> <span>(fr)</span></a></li></ul></li></ul>    </div>
+    </div>
+    </div>
+<div class="top-bar">        <div class="row column">            <div class="top-bar-left">                <a href="index.html?lang=en" class="logo float-left">                    <img src="img/logo.png"></a>            </div>            <div class="top-bar-right">                <ul class="menu float-left">    <li><a href="index.html?lang=en"><span>HOME</span></a></li>
+    <li><a href="savegames.html?lang=en"><span>SAVEGAMES</span></a></li>
+    <li><a href="mods.html?lang=en"><span>MODS</span></a></li>
+    <li><a href="journal.html?lang=en"><span>JOURNAL</span></a></li>
+<li><div class="status-indicator online"><span>ONLINE</span></div></li></ul></div></div></div></header><section class="content-wrap"><div class="row"> <div class="medium-8 columns">
+<img src="template/loginLogo.jpg"><br/><br/><h2>Login to Dedi Server</h2>
+<p>Please enter your login credentials</p>
+<div class="row column">
+	<form name="input" action="index.html?lang=en" method="POST"><div class="table2"><div class="row column table-even"><div class="medium-3 columns column-label">Username</div><div class="medium-9 columns"><input type="text" name="username" value=""></div></div><div class="row column table-odd"><div class="medium-3 columns column-label">Password</div><div class="medium-9 columns"><input type="password" name="password" value=""></div></div><div class="row column table-even text-right">
+<input class="button button-form-submit"  name="login"  type="submit" value="Login"></div></div></form><i>Please refer to config file dedicatedServer.xml for initial admin password.</i><br /><br />
+<h2>Dedicated Server Mobile App (Free)</h2><div><a class="itunesbadge" href="https://itunes.apple.com/ch/app/dedi-app-19/id1441940834?mt=8" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg) no-repeat;width:135px;height:40px;background-position: center;"></a><a class="googleplaybadge" href="https://play.google.com/store/apps/details?id=com.giantssoftware.fs19_dedi_app" style="margin-left: 5px; display:inline-block;overflow:hidden;background:url(https://play.google.com/intl/en_us/badges/images/apps/en-play-badge-border.png) no-repeat;width:141px;height:40px;background-size: cover;background-position-x: -4px;background-position-y: -3px;"></a></div></div>
+</div>
+<div class="medium-4 columns">
+<div class="social-wrapper">
+
+    <div class="social-header clearfix">
+
+        <div class="title-wrap clearfix" style="line-height: 62px;">
+
+            <i class="icon fab fa-twitter"></i><span>Twitter</span>
+        </div>
+        <a href="https://twitter.com/farmingsim" target="_newTwitter" class="button follow-btn" style="line-height: 62px;">Follow</a>
+    </div>
+
+            <div class="social-news-block">
+                <p>Some day this is gonna get used up. <a href="https://twitter.com/search?q=%23ThrowbackThursday&src=hash">#ThrowbackThursday</a> <a target="_blank" href="https://t.co/5T1J7ReKVs">https://t.co/5T1J7ReKVs</a></p>
+                <div class="img-wrap"><img src="https://pbs.twimg.com/media/F43WhPnbEAAMuD-.jpg:small"></div>
+                <span class="post-date">8 hours ago</span>
+            </div>
+            <div class="social-news-block">
+                <p>We're back from the world's biggest consumer fair for video games!
+Check out some impressions from the event and what you might have missed!
+<a target="_blank" href="https://t.co/Nr6ldsscu6">https://t.co/Nr6ldsscu6</a></p>
+                
+                <span class="post-date">yesterday</span>
+            </div>
+            <div class="social-news-block">
+                <p>Don't miss out if you'll be at PAX West: Check out whats coming with the Premium Edition and meet us at Booth 856!
+
+More Info: <a target="_blank" href="https://t.co/5UhbW3svn3">https://t.co/5UhbW3svn3</a> <a target="_blank" href="https://t.co/eQZ7nR7cAI">https://t.co/eQZ7nR7cAI</a></p>
+                <div class="img-wrap"><img src="https://pbs.twimg.com/media/F4tDcyPaMAADqn_.jpg:small"></div>
+                <span class="post-date">2 days ago</span>
+            </div>
+            <div class="social-news-block">
+                <p>Take a load off
+<a href="https://twitter.com/search?q=%23MondayMotivation&src=hash">#MondayMotivation</a> <a target="_blank" href="https://t.co/fX2rNqOAAK">https://t.co/fX2rNqOAAK</a></p>
+                <div class="img-wrap"><img src="https://pbs.twimg.com/media/F4nOgmfWkAEs6WQ.jpg:small"></div>
+                <span class="post-date">3 days ago</span>
+            </div>
+</div>
+</div>
+</div>
+</section>
+  <div class="partners clearfix text-center">   <div class="row">    <div class="columns">
+<img style="vertical-align:text-top;" src="template/bottomLogo.jpg" />    </div>   </div>  </div>  <footer class="main-footer clearfix">
+  <div class="row">
+    <div class="medium-8 columns">
+<div class="copyright"><a href="https://giants-software.com" target="_newGiantsSoftware"><img class="copyright__logo" src="img/logos/footer-logo.png"></a><div>&copy; 2018 GIANTS Software GmbH All Rights Reserved.<br>All other trademarks are properties of their respective owners.</div></div>    </div>
+    <div class="medium-4 small-12 columns">
+    <ul class="menu menu-footer float-right">
+<li><a href="https://www.farming-simulator.com">8.0.3.0 (Non-commercial&nbsp;use&nbsp;only)</a></li>
+    </ul>
+    </div>
+  </div>
+  </footer>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/frontend.js"></script>
+<script>$(document).foundation();</script>
+</div>
+</body>
+</html>

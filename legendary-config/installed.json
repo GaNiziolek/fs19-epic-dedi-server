@@ -1,0 +1,30 @@
+{
+  "Stellula": {
+    "app_name": "Stellula",
+    "base_urls": [
+      "https://download.epicgames.com/Builds/Org/o-wt4zxeetmq6jem7qp4pkssr46aenj5/d8208b72c02e46f8814c653667f7db41/default",
+      "https://download2.epicgames.com/Builds/Org/o-wt4zxeetmq6jem7qp4pkssr46aenj5/d8208b72c02e46f8814c653667f7db41/default",
+      "https://download3.epicgames.com/Builds/Org/o-wt4zxeetmq6jem7qp4pkssr46aenj5/d8208b72c02e46f8814c653667f7db41/default",
+      "https://download4.epicgames.com/Builds/Org/o-wt4zxeetmq6jem7qp4pkssr46aenj5/d8208b72c02e46f8814c653667f7db41/default",
+      "https://epicgames-download1.akamaized.net/Builds/Org/o-wt4zxeetmq6jem7qp4pkssr46aenj5/d8208b72c02e46f8814c653667f7db41/default",
+      "https://fastly-download.epicgames.com/Builds/Org/o-wt4zxeetmq6jem7qp4pkssr46aenj5/d8208b72c02e46f8814c653667f7db41/default"
+    ],
+    "can_run_offline": true,
+    "egl_guid": "",
+    "executable": "FarmingSimulator2019.exe",
+    "install_path": "/root/Games/FarmingSimulator19",
+    "install_size": 15528912033,
+    "install_tags": [],
+    "is_dlc": false,
+    "launch_parameters": "",
+    "manifest_path": null,
+    "needs_verification": false,
+    "platform": "Windows",
+    "prereq_info": null,
+    "requires_ot": false,
+    "save_path": null,
+    "title": "Farming Simulator 19",
+    "uninstaller": null,
+    "version": "1.7.1.0o Win"
+  }
+}
